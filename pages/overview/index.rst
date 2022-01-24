@@ -7,7 +7,7 @@
 .. description: 
 .. type: text
 
-.. note:: Class Hours: 11AM-12:20PM Wednesday, CS 401. Office Hours: Contact instructor
+.. note:: Class Hours: 11AM-12:20PM Wednesday, CS 401. Office Hours: Email instructor to setup a time.
 
 Overview
 ===========
