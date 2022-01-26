@@ -155,6 +155,7 @@ NAVIGATION_LINKS = {
         ('/pages/schedule', 'Schedule', 'fa fa-calendar'),
         ('/pages/project', 'Project', 'fa fa-folder'),
         ('/pages/resources', 'Resources', 'fa fa-paperclip'),
+        ('/pages/demos', 'Demos', 'fa fa-code'),
         #('/archive.html', 'Archives', 'fa fa-folder-open'),
         #('/categories/index.html', 'Tags', 'fa fa-tags'),
         #('/rss.xml', 'RSS', 'fa fa-rss'),
@@ -253,12 +254,14 @@ THEME_CONFIG = {
 #     )
 
 POSTS = (
+    ("posts/*.ipynb", "posts", "post.tmpl"),
 )
 PAGES = (
     ("pages/*.rst", "pages", "page.tmpl"),
     ("pages/*.md", "pages", "page.tmpl"),
     ("pages/*.txt", "pages", "page.tmpl"),
     ("pages/*.html", "pages", "page.tmpl"),
+    ("pages/*.ipynb", "pages", "page.tmpl"),
 )
 
 
@@ -942,7 +945,12 @@ IMAGE_FOLDERS = {'images': 'images'}
 # This list MAY be incomplete since pygments adds styles every now and then.
 # Check with list(pygments.styles.get_all_styles()) in an interpreter.
 #
-# CODE_COLOR_SCHEME = 'default'
+CODE_COLOR_SCHEME = 'monokai'
+LICENSE = """
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA"
+style="border-width:0; margin-bottom:12px;"
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>"""
 
 # FAVICONS contains (name, file, size) tuples.
 # Used to create favicon link like this:
@@ -1252,7 +1260,7 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 # <input type="text" name="q" class="form-control" placeholder="Search">
 # </div>
 # <button type="submit" class="btn btn-primary">
-# 	<span class="glyphicon glyphicon-search"></span>
+#       <span class="glyphicon glyphicon-search"></span>
 # </button>
 # <input type="hidden" name="sitesearch" value="%s">
 # </form>
