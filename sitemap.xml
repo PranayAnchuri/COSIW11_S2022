@@ -7,11 +7,15 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://example.com/</loc>
-  <lastmod>2022-01-24T04:21:00Z</lastmod>
+  <lastmod>2022-01-26T05:02:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://example.com/2022/</loc>
+  <lastmod>2022-01-26T05:02:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/archive.html</loc>
-  <lastmod>2022-01-24T03:34:00Z</lastmod>
+  <lastmod>2022-01-26T05:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/</loc>
@@ -19,7 +23,15 @@
  </url>
  <url>
   <loc>https://example.com/pages/</loc>
-  <lastmod>2022-01-24T04:06:00Z</lastmod>
+  <lastmod>2022-01-26T05:20:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://example.com/pages/demo-of-proof-of-work-puzzle/</loc>
+  <lastmod>2022-01-26T05:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://example.com/pages/demos/</loc>
+  <lastmod>2022-01-26T05:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/pages/logistics/</loc>
@@ -28,6 +40,10 @@
  <url>
   <loc>https://example.com/pages/overview/</loc>
   <lastmod>2022-01-23T23:56:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://example.com/pages/pow/</loc>
+  <lastmod>2022-01-26T05:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/pages/project/</loc>
