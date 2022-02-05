@@ -52,7 +52,7 @@
 'redirect', (41472, 56)
 'copy_assets:output/assets/js/gallery.min.js', (41984, 434)
 'create_bundles:output/assets/css/all-nocdn.css', (178176, 1119)
-'sitemap:output/sitemap.xml', (167424, 2739)
+'sitemap:output/sitemap.xml', (167424, 2738)
 'copy_assets:output/assets/css/rst_base.css', (45056, 434)
 'robots_file', (45568, 56)
 'render_sources:output/pages/overview/index.rst', (46080, 241)

@@ -14,8 +14,8 @@
 
 | **Event***                         | **Due/Start date**      | **Notes** |
 |---------------------------	|------------	|----|
-| Decide groups                 | 2022-02-04    |Submit via Google forms (1 submission per group). Group size = 1 or 2-3 for larger scale projects.|
-| Proposal draft                | 2022-02-11    |Email instructor for feedback|
+| Decide groups                 | ~~2022-02-04~~ 2022-02-14    |Submit via Google forms (1 submission per group). Group size = 1 or 2-3 for larger scale projects.|
+| Proposal draft                | ~~2022-02-11~~ 2022-02-14    |Email instructor for feedback|
 | Group presentations start     | 2022-02-16    |Brief presentations/Status updates by all groups followed by discussions|
 | Project proposal              | 2022-02-17    |Submit via [IW portal](https://www.cs.princeton.edu/ugrad/independent-work/important-steps-and-deadlines#Written_Project_Proposal)|
 | Checkpoint form               | 2022-03-05    |Submit via [IW portal](https://www.cs.princeton.edu/ugrad/independent-work/important-steps-and-deadlines#Checkpoint_Form)|
