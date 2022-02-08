@@ -30,7 +30,7 @@ Ethereum
 - Ethereum 2.0
 
 Analysis of blockchain data
-========
+===========================
 
 Analysis
 ---------
@@ -38,6 +38,7 @@ Analysis
 
 Software
 ---------
+- Raw Bitcoin parser : https://github.com/ragestack/blockchain-parser
 - BlockSci : https://github.com/citp/BlockSci
 - Ethereum ETL : https://github.com/blockchain-etl/ethereum-etl
 - Ethereum Decompiler : https://github.com/palkeo/panoramix
