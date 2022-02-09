@@ -101,6 +101,6 @@
 'render_sources:output/pages/demos/index.rst', (176640, 236)
 'render_sources:output/pages/schedule/index.md', (177152, 241)
 'copy_files:output/assets/css/custom.css', (177664, 263)
-'render_pages:output/pages/ethactivity/index.html', (179712, 4230)
+'render_pages:output/pages/ethactivity/index.html', (179712, 4228)
 'render_sources:output/pages/ethactivity/index.ipynb', (184320, 254)
 'render_posts:cache/pages/ethactivity.html', (184832, 371)
