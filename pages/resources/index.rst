@@ -39,6 +39,7 @@ Analysis
 Software
 ---------
 - Raw Bitcoin parser : https://github.com/ragestack/blockchain-parser
+- Python Bitcoin parser : https://github.com/alecalve/python-bitcoin-blockchain-parser
 - BlockSci : https://github.com/citp/BlockSci
 - Ethereum ETL : https://github.com/blockchain-etl/ethereum-etl
 - Ethereum Decompiler : https://github.com/palkeo/panoramix

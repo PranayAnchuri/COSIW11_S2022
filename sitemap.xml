@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>https://example.com/pages/</loc>
-  <lastmod>2022-01-26T05:20:00Z</lastmod>
+  <lastmod>2022-02-09T15:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/pages/demo-of-proof-of-work-puzzle/</loc>
@@ -28,6 +28,10 @@
  <url>
   <loc>https://example.com/pages/demos/</loc>
   <lastmod>2022-01-26T05:20:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://example.com/pages/ethactivity/</loc>
+  <lastmod>2022-02-09T15:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/pages/logistics/</loc>

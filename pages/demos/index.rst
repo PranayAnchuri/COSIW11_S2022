@@ -12,3 +12,8 @@
     <embed>
  <a href="../demo-of-proof-of-work-puzzle/">Demo of proof of work</a>
     </embed>
+
+
+    <embed>
+ <a href="../ethactivity/">Exploring Ethereum transactions</a>
+    </embed>
