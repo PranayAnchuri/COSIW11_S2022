@@ -22,7 +22,7 @@
 Form groups of 3-4
 Groups will work on Ethereum transactions be">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2022-02-09T12:36:03-05:00">
+<meta property="article:published_time" content="2022-02-20T19:23:43-05:00">
 </head>
 <body>
     <a href="#page-content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -77,7 +77,7 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [14]:</div>
+<div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import packages</span>
@@ -85,6 +85,7 @@ Groups will work on Ethereum transactions be">
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">'fivethirtyeight'</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -94,7 +95,7 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [15]:</div>
+<div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># read files to individual dataframes and convert to a single dataframe</span>
@@ -108,7 +109,7 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [16]:</div>
+<div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s2">"./data"</span>
@@ -127,7 +128,7 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [17]:</div>
+<div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1. What is the shape (number of rows and number of columns) of the combined dataframe</span>
@@ -140,7 +141,40 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [19]:</div>
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(1464829, 12)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 2. What is the minimum and maximum blocknumber</span>
@@ -153,13 +187,79 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [21]:</div>
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Block_Number</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Block_Number</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>10230000
+10240000
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 3. Is Tx_Hash column a primary key in this table ?</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Tx_Hash</span><span class="o">.</span><span class="n">is_unique</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -178,7 +278,7 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [23]:</div>
+<div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1. For each unique address, calculate the number of times the address has initiated a transaction</span>
@@ -191,7 +291,49 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [25]:</div>
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Tx_From</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>ddd26c200bf6dbb775a9d91fc24b5ece5be7a45f    23257
+05b57d05b11436e828a43867cb95de4f589d0b9a    21032
+ea674fdde714fd979de3edf0f56aa9716b898ec8    20404
+00a2b2a9d01a80d1c0219a4b4bc6a02541e3eaa3    17955
+c6bd3edd07e294cb66b8318356d688b3516ea950    10723
+                                            ...  
+baaadb3abfb710059257fe0f7747eefe64c3c96e        1
+74a53970ae7ee05693c304078d66f386a5fb9db9        1
+a085935ed99e35874929572e8a75fb16d541e033        1
+c8546029ab197b4df699c980fe1c0ec5be7f1a28        1
+7594558a581c44eb1867bc513c5462a6c52890e4        1
+Name: Tx_From, Length: 421891, dtype: int64
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 2. Find the address with the most number of transactions</span>
@@ -204,7 +346,40 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [27]:</div>
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Tx_From</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[13]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'ddd26c200bf6dbb775a9d91fc24b5ece5be7a45f'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 3a. What fraction of addresses have sent a single transaction</span>
@@ -217,7 +392,40 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [29]:</div>
+<div class="prompt input_prompt">In [15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Tx_From</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">df</span><span class="o">.</span><span class="n">Tx_From</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.7419594160577021</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 3b. What fraction of addresses have sent two transactions</span>
@@ -230,7 +438,40 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [31]:</div>
+<div class="prompt input_prompt">In [17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Tx_From</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">df</span><span class="o">.</span><span class="n">Tx_From</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[17]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.13668459388799475</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 4. Draw a graph with number of transactions sent by address on X-axis and Number of addresses on Y-axis</span>
@@ -243,13 +484,97 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [33]:</div>
+<div class="prompt input_prompt">In [19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">counts</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Tx_From</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">counts</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="n">counts</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">counts</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">'log'</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Number of transactions"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Number of addresses"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[19]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Text(0, 0.5, 'Number of addresses')</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 5. Can you think of any other sender metrics</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Most active sender : Activity of a sender is defined by the number of blocks in which user has sent a transaction</span>
+<span class="n">num_active_blocks</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"Tx_From"</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">Block_Number</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num_active_blocks</span><span class="o">.</span><span class="n">idxmax</span><span class="p">(),</span> <span class="n">num_active_blocks</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>a7a7899d944fe658c4b0a1803bab2f490bd3849e 3652
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -268,7 +593,7 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [36]:</div>
+<div class="prompt input_prompt">In [22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1. For each unique address, calculate the ￼number of times the address has received a transaction</span>
@@ -281,7 +606,51 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [38]:</div>
+<div class="prompt input_prompt">In [23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Tx_To</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[23]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>dac17f958d2ee523a2206206994597c13d831ec7    324300
+5acc84a3e955bdd76467d3348077d003f00ffb97     27266
+912656188616e0184e3181f019022990a63280b1     24899
+8a91c9a16cd62693649d80afa85a09dbbdcb8508     24071
+860bd2dba9cd475a61e6d1b45e16c365f6d78f66     23863
+                                             ...  
+0a83eb3a6c5b357b1b07806238afa8198556e94b         1
+648d53ac6827f40ae4b597591aa809f6cc3b2ec1         1
+872a58ea4c1bef45012fde0da28b8b6e547e66c6         1
+9363ccba89926d51fe90e6b522df9a5943d12691         1
+50369d4bfaabc1ce19ae5cbf06e9e9525f476231         1
+Name: Tx_To, Length: 308314, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 2. Ethereum contract deployment transactions have an empty To value. How many contracts are deployed in this dataset ?</span>
@@ -294,7 +663,40 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [40]:</div>
+<div class="prompt input_prompt">In [25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Tx_To</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[25]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3389</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 3a. What fraction of addresses have received a single transaction</span>
@@ -307,7 +709,40 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [42]:</div>
+<div class="prompt input_prompt">In [27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Tx_To</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">df</span><span class="o">.</span><span class="n">Tx_To</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[27]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.7812879077823258</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 3b. What fraction of addresses have received two transactions</span>
@@ -320,7 +755,40 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [44]:</div>
+<div class="prompt input_prompt">In [29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Tx_To</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">df</span><span class="o">.</span><span class="n">Tx_To</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[29]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.13722373943447264</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 4. Draw a graph with number of transactions sent to address on X-axis and Number of addresses on Y-axis</span>
@@ -333,13 +801,98 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [47]:</div>
+<div class="prompt input_prompt">In [31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">counts</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Tx_To</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">counts</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="n">counts</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">counts</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">'log'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Number of transactions"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Number of addresses"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[31]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Text(0, 0.5, 'Number of addresses')</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 5. Can you think of any other receiver metrics</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Most popular receiver : Popularity of a receiver is defined by the number of unique addresses from which it received a transaction</span>
+<span class="n">popularity</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"Tx_To"</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">Tx_From</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">popularity</span><span class="o">.</span><span class="n">idxmax</span><span class="p">(),</span> <span class="n">popularity</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="c1"># https://etherscan.io/address/0xdac17f958d2ee523a2206206994597c13d831ec7</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>dac17f958d2ee523a2206206994597c13d831ec7 116706
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -358,7 +911,7 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [49]:</div>
+<div class="prompt input_prompt">In [34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1. Using the Tx_Value field, find the transaction (hash) with highest value</span>
@@ -371,7 +924,53 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [51]:</div>
+<div class="prompt input_prompt">In [35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tx</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Tx_Value</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tx</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tx</span><span class="o">.</span><span class="n">Tx_Hash</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Block_Number                                             10239450
+Tx_Hash         db46bcd9a9f7fce4a75c7a1835b6bcb1dfa3754cc905f2...
+Tx_From                  2a44ef8d80f1837ac03a1c7e26e58f354c2bac29
+Tx_To                    4f6742badb049791cd9a37ea913f2bac38d01279
+Tx_Data                                                       NaN
+Tx_Gas                                                      21000
+Tx_GasPrice                                           27500000000
+Tx_Tip                                                27500000000
+Tx_FeeCap                                             27500000000
+Tx_Value                                  66026000053160600000000
+Tx_Nonce                                                        2
+Tx_Cost                                   66026000630660600000000
+Name: 1082666, dtype: object
+db46bcd9a9f7fce4a75c7a1835b6bcb1dfa3754cc905f2a708a19d7c5530f4d4
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 2. Using etherscan.io and coinmarketcap.com, find the dollar amount of the above transaction then and today</span>
@@ -384,7 +983,41 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [53]:</div>
+<div class="prompt input_prompt">In [37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#https://etherscan.io/tx/0xdb46bcd9a9f7fce4a75c7a1835b6bcb1dfa3754cc905f2a708a19d7c5530f4d4</span>
+<span class="mi">3075</span> <span class="o">*</span> <span class="mf">66026.0000531606</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[37]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>203029950.16346887</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 3. Find the most common Gas cost ? What kind of transaction does it represent ?</span>
@@ -397,7 +1030,41 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [55]:</div>
+<div class="prompt input_prompt">In [39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Tx_Gas</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<span class="c1"># Gas cost for simple transfers</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[39]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>21000</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 4. Find the transaction with highest fee and what is it's cost today ?</span>
@@ -410,7 +1077,41 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [57]:</div>
+<div class="prompt input_prompt">In [41]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Tx_GasPrice</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()]</span><span class="o">.</span><span class="n">Tx_Hash</span>
+<span class="c1">#https://etherscan.io/tx/0xca8f8c315c8b6c48cee0675677b786d1babe726773829a588efa500b71cbdb65</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[41]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'ca8f8c315c8b6c48cee0675677b786d1babe726773829a588efa500b71cbdb65'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 5. Do you think the above transaction is an outlier ? Can you come up with a theory to explain this transaction ?</span>
@@ -423,7 +1124,7 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [58]:</div>
+<div class="prompt input_prompt">In [43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 6. Find the block with highest average gas price. Does it have the above transaction ?</span>
@@ -434,21 +1135,54 @@ Groups will work on Ethereum transactions be">
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [44]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"Block_Number"</span><span class="p">)[</span><span class="s2">"Tx_GasPrice"</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[44]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>10237208</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Focus-area-:-Block-analytics">Focus area : Block analytics<a class="anchor-link" href="#Focus-area-:-Block-analytics">¶</a>
+<h2 id="Block-analytics">Block analytics<a class="anchor-link" href="#Block-analytics">¶</a>
 </h2>
-<p>Group by "Block_Number" to get block level stats</p>
+<p>Group by "Block_Number" to get block level stats df.func_hash.value_counts().idxmax() df.func_hash.value_counts().idxmax()</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [59]:</div>
+<div class="prompt input_prompt">In [45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#1. Find the block with highest number of transactions and how many transactions does it have</span>
@@ -461,7 +1195,41 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [61]:</div>
+<div class="prompt input_prompt">In [46]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">idx</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"Block_Number"</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Block_Number</span> <span class="o">==</span> <span class="n">idx</span><span class="p">]))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>10235430
+473
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#2. Find the block with least number of transactions and how many transactions does it have</span>
@@ -474,7 +1242,41 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [63]:</div>
+<div class="prompt input_prompt">In [48]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">idx</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"Block_Number"</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Block_Number</span> <span class="o">==</span> <span class="n">idx</span><span class="p">]))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>10231550
+2
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 3. Using etherscan.io, find the average block time during this period</span>
@@ -487,10 +1289,91 @@ Groups will work on Ethereum transactions be">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [65]:</div>
+<div class="prompt input_prompt">In [50]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nblocks</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"Block_Number"</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="n">timediff</span> <span class="o">=</span>  <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="s2">"Jun-10-2020 08:03:26 PM"</span><span class="p">)</span> <span class="o">-</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="s2">"Jun-09-2020 06:44:19 AM"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">timediff</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">nblocks</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0 days 00:00:14.054503609
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [51]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 4. The first 8 characters (if its exists) of Tx_Data is the keccak256 hash of the function that is invoked in the transaction. Use https://www.4byte.directory/signatures/ to find a signature of the most common function during this time.</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [52]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">"func_hash"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Tx_Data</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[:</span><span class="mi">8</span><span class="p">]</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">func_hash</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>              
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[52]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'a9059cbb'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
     </div>
